@@ -9,7 +9,7 @@
 var payload = window.location.hash.substr(1);window.location.assign(payload);
  </script>
 #### 3: source : window.location.hash.substd(1) 
-//This source extracts the fragments part from the URL and define as variable payload(The portion after the # sign):
+//This source extracts the fragments part from the URL and store as payload variable(The portion after the # sign):
 
 
 ####  sink   : window.location.assign(payload) 
