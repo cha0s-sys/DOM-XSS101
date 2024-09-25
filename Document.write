@@ -1,0 +1,4 @@
+#### [ Description ] : These vulnerabilities source the payload from a component of the address bar, usually the fragment, and use javascript sinks to trigger DOM based XSS.
+
+#### [ Location.hash ]
+
