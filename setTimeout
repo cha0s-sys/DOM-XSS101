@@ -1,0 +1,21 @@
+#### [ Description ] : These vulnerabilities source the payload from a component of the address bar, usually the fragment, and use javascript sinks to trigger DOM based XSS.
+
+
+#### [ Location.hash ]
+ 
+#### 1.Location.hash - setTimeout
+#### 2.Vulnerable Code : 
+ <script>
+      var payload = window.location.hash.substr(1);setTimeout('var a=a;' + payload, 1); 
+ </script>
+#### 3: source : window.location.hash.substr(1) 
+//This source extracts the fragments part from the URL and store as payload variable(The portion after the # sign):
+
+
+####  sink   :  setTimeout('var a=a;' + payload, 1); 
+// The setTimeout function is used to execute a piece of code after a specified delay (in milliseconds). Here, the delay is set to 1 millisecond.
+
+#### 4: Exploit : So we Can Exploit DOM XSS by injecting alert function to the page using this source and sink :
+#### 5: POC ::
+
+//https://public-firing-range.appspot.com/address/location.hash/setTimeout#alert();
